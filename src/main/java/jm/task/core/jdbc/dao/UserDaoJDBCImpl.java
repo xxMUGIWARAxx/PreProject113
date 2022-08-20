@@ -47,15 +47,14 @@ public class UserDaoJDBCImpl implements UserDao {
     @Override
     public void saveUser(String name, String lastName, byte age) throws SQLException {
         PreparedStatement preparedStatement = null;
-        String sql = "INSERT INTO Users (ID, FIRST_NAME, LAST_NAME, AGE)VALUES(?, ?, ?, ?)";
+        String sql = "INSERT INTO Users (FIRST_NAME, LAST_NAME, AGE)VALUES(?, ?, ?, ?)";
         User user = new User();
         try {
             preparedStatement = connection.prepareStatement(sql);
 
-            preparedStatement.setLong(1,user.getId());
-            preparedStatement.setString(2,name);
-            preparedStatement.setString(3,lastName);
-            preparedStatement.setByte(4,age);
+            preparedStatement.setString(1,name);
+            preparedStatement.setString(2,lastName);
+            preparedStatement.setByte(3,age);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
