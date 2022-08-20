@@ -111,10 +111,9 @@ public class UserDaoJDBCImpl implements UserDao {
         PreparedStatement preparedStatement = null;
         Connection connection = getConnection();
 
-
-        String sql = "DELETE * FROM Users ";
-        preparedStatement.execute();
+        String sql = "TRUNCATE TABLE users";
         preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.execute();
         if(preparedStatement != null) {
             preparedStatement.close();
         }
