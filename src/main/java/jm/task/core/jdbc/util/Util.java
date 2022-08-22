@@ -15,7 +15,7 @@ public class Util {
         Connection connection = null;
         try {
             Class.forName(DB_DRIVER);
-            connection = DriverManager.getConnection(DB_URL,DB_USERNAME,DB_PASSWORD);
+            connection = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD);
             System.out.println("connection OK");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
