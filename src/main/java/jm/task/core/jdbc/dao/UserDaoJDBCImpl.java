@@ -14,6 +14,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public UserDaoJDBCImpl() {
 
     }
+
     @Override
     public void createUsersTable() {
         String sql = "CREATE TABLE IF NOT EXISTS Users (id MEDIUMINT NOT NULL AUTO_INCREMENT, FIRST_NAME CHAR(30) NOT NULL, last_name CHAR(30) NOT NULL,age INT not null , PRIMARY KEY (id))";
